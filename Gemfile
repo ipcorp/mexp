@@ -16,6 +16,8 @@ gem 'less-rails'
 
 gem 'bower'
 gem 'react-rails'
+gem 'flux-rails-assets'
+gem 'lodash-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
