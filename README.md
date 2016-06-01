@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple expenses control application to test the abilities with reactjs and rails
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+* Clone the project
+* run `bundle install`
+* Install bower dependencies with `rake bower:install`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Note: To install bower watch: http://bower.io/
