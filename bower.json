@@ -1,0 +1,7 @@
+{
+  "name": "mexp",
+  "version": "0.0.1",
+  "main": "",
+  "private": true,
+  "dependencies": {"startbootstrap-sb-admin-2": "1.0.8"}
+}
