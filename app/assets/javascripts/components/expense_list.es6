@@ -24,6 +24,7 @@ class ExpenseList extends React.Component {
             <th>Date</th>
             <th>Description</th>
             <th>Amount</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>

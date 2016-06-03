@@ -14,7 +14,7 @@ class Actions {
       });
     });
   }
-  static setExpenses(params) {
+static setExpenses(params) {
     AppDispatcher.dispatch({
       actionType: Constants.SET_EXPENSE,
       expenses: params

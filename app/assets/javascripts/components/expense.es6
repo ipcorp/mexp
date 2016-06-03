@@ -13,6 +13,9 @@ class Expense extends React.Component {
         <td>{this.props.date}</td>
         <td>{this.props.description}</td>
         <td>{this.props.amount}</td>
+        <td><a className="btn btn-danger btn-sm">
+          <i className="fa fa-trash" /></a>
+        </td>
       </tr>
     );
   }
