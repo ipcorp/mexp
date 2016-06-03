@@ -4,19 +4,23 @@ import ExpenseList from '/components/expense_list';
 import ExpenseForm from '/components/expense_form';
 class ExpenseSection extends React.Component {
     constructor(props) {
-        super(props);
-        this.displayName = '';
-        this.store = new ExpenseStore();
+      super(props);
+      this.displayName = '';
+      this.store = new ExpenseStore();
+      this.actions = Actions;
+      this.actions.setExpenses(JSON.parse(props.expenses));
     }
     static get childContextTypes() {
       return {
-        store: React.PropTypes.object.isRequired
+        store: React.PropTypes.object.isRequired,
+        actions: React.PropTypes.func.isRequired
       }
     }
 
     getChildContext() {
       return {
-        store: this.store
+        store: this.store,
+        actions: this.actions
       }
     }
 
@@ -27,6 +31,5 @@ class ExpenseSection extends React.Component {
                </div>
     }
 }
-window.Actions = Actions;
 window.ExpenseSection = ExpenseSection;
 export default ExpenseSection;

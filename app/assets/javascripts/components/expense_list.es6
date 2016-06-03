@@ -27,8 +27,8 @@ class ExpenseList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.context.store.expenses().map((expense) => {
-            return (<Expense key={expense.id} {... expense} />);
+          {this.context.store.expenses().map((expense, i) => {
+            return (<Expense key={i} date={expense.date} description={expense.description} amount={parseFloat(expense.amount)} />); //{... expense}
           })}
         </tbody>
       </table>

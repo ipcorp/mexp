@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20160601140753) do
     t.date     "date"
     t.string   "description"
     t.float    "amount"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

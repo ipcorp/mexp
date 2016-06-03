@@ -29,7 +29,7 @@
   </div> -->
   <div class="row">
     <div class="col-md-12">
-      <%= react_component("ExpenseSection") %>
+      <%= react_component("ExpenseSection", expenses: raw(render(template: 'expenses/index.json.jbuilder'))) %>
     </div>
   </div>
 </div>

@@ -6,10 +6,14 @@ class ExpenseStore extends EventEmitter {
     this._expenses = []
     AppDispatcher.register((payload) => {
       switch(payload.actionType) {
+        case Constants.SET_EXPENSE:
+          this.setExpenses(payload.expenses);
+          this.emitChange();
+          break;
         case Constants.ADD_EXPENSE:
-          this.addExpense(payload.expense)
-          this.emitChange()
-          break
+          this.addExpense(payload.expense);
+          this.emitChange();
+          break;
         default:
           // NO-OP
       }
@@ -18,23 +22,29 @@ class ExpenseStore extends EventEmitter {
 
   }
 
-  addExpense(expense) {
-    this._expenses[expense.id] = expense;
+  addExpense (expense) {
+    this._expenses[expense.id || this._expenses.length] = expense;
+  }
+
+  setExpenses (expenses) {
+    expenses.forEach(expense => {
+      this.addExpense(expense)
+    })
   }
 
   expenses() {
     return this._expenses;
   }
 
-  addChangeListener(callback) {
+  addChangeListener (callback) {
     this.on(Constants.CHANGE_EVENT, callback);
   }
 
-  removeChangeListener(callback) {
+  removeChangeListener (callback) {
     this.removeListener(Constants.CHANGE_EVENT, callback);
   }
 
-  emitChange() {
+  emitChange () {
     this.emit(Constants.CHANGE_EVENT);
   }
 
